@@ -38,13 +38,13 @@ module "autoscaling" {
   version = "8.0.0"
   # insert the 1 required variable here
 
-  name "blog-alb"
+  name "blog"
   min_size = 1
   max_size = 2
 
   vpc_zone_identifier = module.bolg_vpc.public_subnets
   target_group_arns   = module.bolg_alb.target_group_arns
-  security_groups     = [modue.blog_sg.security_group_id]
+  security_groups     = [module.blog_sg.security_group_id]
 
   imgage_id           = data.aws_ami.app_ami.id
   instance_type       = var.instance_type
