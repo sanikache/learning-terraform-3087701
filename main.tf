@@ -38,7 +38,7 @@ module "autoscaling" {
   version = "8.0.0"
   # insert the 1 required variable here
 
-  name "blog"
+  name = "blog"
   min_size = 1
   max_size = 2
 
@@ -46,8 +46,8 @@ module "autoscaling" {
   target_group_arns   = module.bolg_alb.target_group_arns
   security_groups     = [module.blog_sg.security_group_id]
 
-  imgage_id           = data.aws_ami.app_ami.id
-  instance_type       = var.instance_type
+  imgage_id     = data.aws_ami.app_ami.id
+  instance_type = var.instance_type
 }
 
 module "alb" {
