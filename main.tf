@@ -38,7 +38,7 @@ module "autoscaling" {
   version = "8.0.0"
   # insert the 1 required variable here
 
-  name "blog"
+  name "blog-alb"
   min_size = 1
   max_size = 2
 
